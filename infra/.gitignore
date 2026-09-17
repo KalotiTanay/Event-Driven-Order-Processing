@@ -1,0 +1,23 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+!example.tfvars
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Lambda build artifacts (added once Lambda source is introduced in Component 2+)
+*.zip
+build/
+dist/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
