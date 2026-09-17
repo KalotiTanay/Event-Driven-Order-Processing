@@ -1,4 +1,4 @@
-# Shared trust policy — every Lambda execution role assumes this.
+# Shared trust policy — for every Lambda execution role.
 data "aws_iam_policy_document" "lambda_assume_role" {
   statement {
     actions = ["sts:AssumeRole"]
@@ -10,7 +10,7 @@ data "aws_iam_policy_document" "lambda_assume_role" {
 }
 
 # --- Order Intake Lambda ---
-# Convention: each Lambda gets its own role, scoped to only the resources it touches.
+# Convention: each Lambda gets its own role
 
 resource "aws_iam_role" "order_intake_lambda" {
   name               = "${var.project_name}-${var.environment}-order-intake-role"
@@ -206,8 +206,8 @@ resource "aws_iam_role_policy" "notification_permissions" {
   policy = data.aws_iam_policy_document.notification_permissions.json
 }
 
-# --- Analytics Lambda (stretch) ---
-# Logs-only, so the basic execution role attachment above is all it needs.
+# --- Analytics Lambda ---
+# Logs-only
 
 resource "aws_iam_role" "analytics_lambda" {
   name               = "${var.project_name}-${var.environment}-analytics-role"

@@ -1,8 +1,3 @@
-########################################
-# EDOS - Event-Driven Order Processing System
-# main.tf — Provider + backend configuration
-########################################
-
 terraform {
   required_version = ">= 1.5.0"
 

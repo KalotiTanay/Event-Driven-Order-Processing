@@ -126,7 +126,7 @@ resource "aws_lambda_event_source_mapping" "payment_processing_trigger" {
 }
 
 # --- Notification Lambda ---
-# Invoked by SNS (see sns.tf), not an SQS event source mapping.
+# Invoked by SNS
 
 data "archive_file" "notification" {
   type        = "zip"
@@ -151,8 +151,8 @@ resource "aws_lambda_function" "notification" {
   }
 }
 
-# --- Analytics Lambda (stretch) ---
-# Also invoked by SNS — second independent subscriber on the same topic.
+# --- Analytics Lambda ---
+# Also invoked by SNS
 
 data "archive_file" "analytics" {
   type        = "zip"

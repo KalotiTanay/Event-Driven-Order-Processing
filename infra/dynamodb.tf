@@ -20,12 +20,12 @@ resource "aws_dynamodb_table" "inventory" {
   }
 }
 
-# Sample products so the pipeline is testable without a separate seed step.
+# Sample products to test pipeline.
 locals {
   sample_products = {
     "prod-001" = 50
     "prod-002" = 10
-    "prod-003" = 0 # deliberately out of stock, for testing the OUT_OF_STOCK path
+    "prod-003" = 0 # testing the OUT_OF_STOCK path
   }
 }
 

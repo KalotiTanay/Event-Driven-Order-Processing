@@ -39,8 +39,6 @@ def _notify(order):
 
 
 def _lookup_customer_email(customer_id):
-    # Placeholder — a real system would look this up from a Customers table.
-    # For MVP, customer_id is treated as the destination address directly.
     return customer_id
 
 

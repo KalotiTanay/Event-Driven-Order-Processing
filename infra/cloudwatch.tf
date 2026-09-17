@@ -10,8 +10,7 @@ resource "aws_sns_topic_subscription" "ops_alerts_email" {
 }
 
 # --- DLQ depth alarms ---
-# Any message landing in a DLQ means a terminal failure happened somewhere
-# upstream — alarm on presence, not a high-water threshold.
+# Message landing in a DLQ means there is a terminal failure
 
 locals {
   dlqs = {
